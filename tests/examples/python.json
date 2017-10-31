@@ -1,0 +1,27 @@
+{
+  "event_id":"3ce8479e4b7d4be4bc9728f7a35f486f",
+  "release":"35f4e83663edd9b5177e0e73edadc8f212f9bc28",
+  "platform":"python",
+  "culprit":"raven_django_example.celery.debug_task",
+  "message":"We are just some info",
+  "timestamp":"2017-10-16T13:23:08.000000Z",
+  "tags":[["transaction","raven_django_example.celery.debug_task"],["server_name","Ashleys-MacBook-Pro.local"],["level","error"],["site","1"],["sentry:release","35f4e83663edd9b5177e0e73edadc8f212f9bc28"],["logger","raven_django_example.celery"]],
+  "errors":[],
+  "extra":{
+    "thread":140737072894912,
+    "process":39719,
+    "sys.argv":["'/Users/ashwoods/.pyenv/versions/raven-django-example/bin/celery'","'-A'","'raven_django_example'","'worker'","'-l'","'debug'"],
+    "threadName":"'MainThread'",
+    "stack_info":null,
+    "filename":"'celery.py'",
+    "processName":"'ForkPoolWorker-2'",
+    "pathname":"'/Users/ashwoods/Documents/Code/sentry/raven-django-example/raven_django_example/celery.py'",
+    "lineno":44},
+  "fingerprint":["{{ default }}"],
+  "metadata":{"title":"We are just some info"},
+  "modules":{"raven_django_example":"0.1.0","allauth":"0.32.0","debug_toolbar":"1.8","python":"3.6.1","compressor":"2.1.1","django_extensions":"1.7.9","rest_framework":"3.6.4","django":"1.10.8","crispy_forms":"1.6.1","raven":"6.3.0.dev0"},
+  "sdk":{"version":"6.3.0.dev0","name":"raven-python"},
+  "sentry.interfaces.Breadcrumbs":{"values":[{"category":"celery.bootsteps","timestamp":1508160187.359904,"message":"| Worker: Preparing bootsteps.","type":"default","level":"debug"},{"category":"celery.bootsteps","timestamp":1508160187.361786,"message":"| Worker: Building graph...","type":"default","level":"debug"},{"category":"celery.bootsteps","timestamp":1508160187.362035,"message":"| Worker: New boot order: {Timer, Hub, Pool, Autoscaler, Beat, StateDB, Consumer}","type":"default","level":"debug"},{"category":"celery.bootsteps","timestamp":1508160187.378256,"message":"| Consumer: Preparing bootsteps.","type":"default","level":"debug"},{"category":"celery.bootsteps","timestamp":1508160187.378385,"message":"| Consumer: Building graph...","type":"default","level":"debug"},{"category":"celery.bootsteps","timestamp":1508160187.397539,"message":"| Consumer: New boot order: {Connection, Agent, Events, Mingle, Tasks, Control, Heart, Gossip, event loop}","type":"default","level":"debug"},{"category":"celery.bootsteps","timestamp":1508160187.428913,"message":"| Worker: Starting Hub","type":"default","level":"debug"},{"category":"celery.bootsteps","timestamp":1508160187.428976,"message":"^-- substep ok","type":"default","level":"debug"},{"category":"celery.bootsteps","timestamp":1508160187.42899,"message":"| Worker: Starting Pool","type":"default","level":"debug"},{"category":"raven_django_example.celery","timestamp":1508160188.881026,"message":"We are just some info","type":"default","level":"error"}]},
+  "sentry.interfaces.Message":{"message":"We are just some info"},
+  "type":"default","version":"6"
+}

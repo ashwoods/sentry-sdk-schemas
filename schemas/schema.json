@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [ "event_id", "timestamp", "platform", "sdk" ],
+  "additionalProperties": false,
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "pattern": "[0-9a-f]{8}[0-9a-f]{4}4[0-9a-f]{3}[89ab][0-9a-f]{3}[‌​0-9a-f]{12}"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "logger": { "type": "string" },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "as3",
+        "c",
+        "cfml",
+        "cocoa",
+        "csharp",
+        "go",
+        "java",
+        "javascript",
+        "node",
+        "objc",
+        "other",
+        "perl",
+        "php",
+        "python",
+        "ruby"
+      ]
+
+    },
+    "sdk": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "integrations": {
+          "type": "array"
+        }
+      },
+      "required": ["name", "version"],
+      "additionalProperties": false
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "debug",
+        "info",
+        "warning",
+        "error",
+        "fatal"
+      ]
+    },
+    "culprit": { "type": "string" },
+    "server_name": { "type": "string" },
+    "release": { "type": ["string", "null"] },
+    "tags": {
+      "type": "array"
+    },
+    "errors": {"type":"array"},
+    "message": {"type": "string"},
+    "environment": { "type": "string" },
+    "modules": {"type": "object"},
+    "metadata": {"type": "object"},
+    "extra": {"type": "object"},
+    "fingerprint": {"type": "array"},
+    "type": {"type": "string"},
+    "version": {"type": "string"},
+    "sentry.interfaces.Message": {
+      "type":"object",
+      "properties": {
+        "message": {
+          "type":"string",
+          "maxLength": 1000
+        },
+        "params": {"type":"array"},
+        "formatted": {"type":"string"}
+      }
+    },
+    "sentry.interfaces.Stacktrace": {
+      "type":"object"
+    },
+    "sentry.interfaces.Exception": {
+      "type":"object",
+      "properties": {
+        "type": {"type":"string"},
+        "value": {"type":"string"},
+        "module": {"type":"string"},
+        "thread_id": {"type":"string"}
+      }
+    },
+    "sentry.interfaces.Http": {
+      "type":"object"
+    },
+    "sentry.interfaces.Template": {
+      "type":"object"
+    },
+    "sentry.interfaces.Breadcrumbs": {
+      "type":"object"
+    },
+    "sentry.interfaces.User": {
+      "type":"object"
+    },
+    "debug_meta": {"type":"object"},
+    "repos": {"type":"object"},
+    "contexts": {
+      "type":"object",
+      "properties": {
+        "os": {
+          "type": "object",
+          "properties": {
+            "name":{},
+            "version":{},
+            "build":{},
+            "kernel_version":{},
+            "rooted":{}
+          }
+        },
+        "device": {
+          "type": "object",
+          "properties": {
+            "name": {"type":"string"},
+            "version": {"type":"string"}
+          }
+        },
+        "runtime": {"type": "object"}
+      }
+    }
+
+  }
+}
